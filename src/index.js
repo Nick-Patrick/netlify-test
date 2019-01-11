@@ -17,6 +17,10 @@ import {
 import { Homepage, NotFound } from './pages'
 
 class App extends Component {
+  state = {
+    user: null
+  }
+
   componentDidMount() {
     const user = localStorage.getItem('currentUser')
     if (user) {
@@ -45,7 +49,7 @@ class App extends Component {
             <AppHeader
               appName="Nicks App"
               appIcon={<Menu />}
-              currentUser={this.state.currentUser}
+              currentUser={this.state.user}
               handleLogin={this.handleLogin}
               handleLogout={this.handleLogout}
             />
